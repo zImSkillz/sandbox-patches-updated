@@ -1,3 +1,9 @@
+# Updated Version
+Due to sandbox updates nodejs fs is now also restricted, this version fixes it with childprocess and a temp folder.
+
+**THIS NEEDS TO BE ADDED TO THE SERVER.CFG:**
+add_unsafe_child_process_permission "script_name"
+
 # Sandbox Patches
 FiveM Lua sandbox IO and OS lib patches
 
