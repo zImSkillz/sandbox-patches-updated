@@ -1,5 +1,14 @@
-ioLib = exports['sandbox-patches']:GetIoLib()
-osLib = exports['sandbox-patches']:GetOsLib()
+--[[ 
+    Modified version of sandbox-patches by ZeroDream-CN
+    https://github.com/ZeroDream-CN/sandbox-patches/
+    https://github.com/ZeroDream-CN/
+
+    modified to work with latest fivem artifacts, it only needs to be allowed to use unsafe child process
+    server cfg: add_unsafe_child_process_permission "script_name"
+]]
+
+ioLib = exports['sandbox-patches-updated']:GetIoLib()
+osLib = exports['sandbox-patches-updated']:GetOsLib()
 ioGlobal = {
     handle = nil,
 }
@@ -137,7 +146,7 @@ function io.popen(cmd, mode)
     end
 
     function ioObj:lines()
-        return ioLib.lines(self.handle)
+        return ioLib.lines(ioLib.handle)
     end
 
     ioGlobal.handle = ioObj.handle
