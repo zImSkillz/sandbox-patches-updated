@@ -18,6 +18,7 @@ git clone https://github.com/ZeroDream-CN/sandbox-patches
 Add the following to your `server.cfg` file:
 ```cfg
 ensure sandbox-patches
+add_unsafe_child_process_permission "sandbox-patches"
 ```
 
 **Note:** This resource must be started before any other resources that use the `os` or `io` libraries.
